@@ -298,6 +298,47 @@ button { cursor: pointer; }
   background: #181820;
 }
 
+/* Полная увеличенная обложка на странице книги */
+
+.reader-hero-inner {
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 55px;
+  align-items: center;
+}
+
+.reader-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 12px;
+  background: #171719;
+  box-shadow: var(--shadow);
+}
+
+/* Отображение на планшете и телефоне */
+
+@media (max-width: 900px) {
+  .reader-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .reader-cover {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .reader-cover {
+    max-width: 300px;
+  }
+}
+
 
 
 
