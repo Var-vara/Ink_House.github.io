@@ -20,8 +20,14 @@
     }[character]));
   }
 
-  function typeLabel(type) {
-    return ({ book: "Книга", story: "Рассказ", illustrated: "Иллюстрированная история" })[type] || "Произведение";
+ function typeLabel(type) {
+  return ({
+    book: "Книга",
+    story: "Рассказ",
+    illustrated: "Иллюстрированная история",
+    comic: "Комикс"
+  })[type] || "Произведение";
+
   }
 
   function slugify(text = "") {
