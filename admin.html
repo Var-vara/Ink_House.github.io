@@ -50,6 +50,23 @@
               <label>Вид<select id="work-type"><option value="book">Книга</option><option value="story">Рассказ</option><option value="illustrated">Иллюстрированный рассказ</option></select></label>
               <label>Жанр<input id="work-genre" maxlength="100" placeholder="Фэнтези, драма, детектив…"></label>
               <label>Краткое описание<textarea id="work-description" rows="5" maxlength="1000"></textarea></label>
+              <label>
+  Площадка для покупки
+  <input
+    id="work-store-name"
+    type="text"
+    placeholder="Например: Rideró"
+  >
+</label>
+
+<label>
+  Ссылка на покупку книги
+  <input
+    id="work-store-url"
+    type="url"
+    placeholder="https://ridero.ru/books/sny_v_epokhu_myortvykh_medalon_s_sekretom/"
+  >
+</label>
               <label>Обложка<input id="work-cover" type="file" accept="image/jpeg,image/png,image/webp,image/gif"></label>
               <div id="current-cover" class="current-image"></div>
               <label>Состояние<select id="work-status"><option value="draft">Черновик</option><option value="published">Опубликовано</option></select></label>
