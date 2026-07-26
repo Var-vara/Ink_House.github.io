@@ -10,7 +10,34 @@ document.addEventListener("DOMContentLoaded", async () => {
     const safeText = AuthorSite.escapeHtml(block.text || "");
     if (block.type === "heading") return `<h3 class="reading-block reading-heading">${safeText}</h3>`;
     if (block.type === "quote") return `<blockquote class="reading-block reading-quote">${safeText}</blockquote>`;
-    if (block.type === "image") return `<figure class="reading-block reading-image"><img src="${AuthorSite.escapeHtml(block.url || "")}" alt="${AuthorSite.escapeHtml(block.caption || "Иллюстрация")}" loading="lazy">${block.caption ? `<figcaption>${AuthorSite.escapeHtml(block.caption)}</figcaption>` : ""}</figure>`;
+   if (block.type === "image") {
+  const comicClass =
+    currentWork?.type === "comic"
+      ? " comic-page"
+      : "";
+
+  return `
+    <figure class="reading-block reading-image${comicClass}">
+      <img
+        src="${AuthorSite.escapeHtml(block.url || "")}"
+        alt="${AuthorSite.escapeHtml(
+          block.caption || "Страница комикса"
+        )}"
+        loading="lazy"
+      >
+
+      ${
+        block.caption
+          ? `
+            <figcaption>
+              ${AuthorSite.escapeHtml(block.caption)}
+            </figcaption>
+          `
+          : ""
+      }
+    </figure>
+  `;
+}
     return `<p class="reading-block reading-text">${safeText}</p>`;
   }
 
