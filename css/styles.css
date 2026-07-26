@@ -392,3 +392,111 @@ button { cursor: pointer; }
   line-height: 1.5;
 }
 
+/* ==========================================
+   ЧИТАЛКА КОМИКСОВ
+   ========================================== */
+
+.comic-reader-layout {
+  width: min(1220px, calc(100% - 30px));
+  grid-template-columns: 220px minmax(0, 900px);
+  justify-content: center;
+  gap: 35px;
+  padding-top: 40px;
+}
+
+.comic-reader-layout .chapter-nav {
+  background: #17171c;
+  border-color: #34343c;
+  color: #ffffff;
+}
+
+.comic-reader-layout .chapter-nav h2 {
+  color: #ffffff;
+}
+
+.comic-reader-layout .chapter-nav button {
+  color: #bdbdc7;
+}
+
+.comic-reader-layout .chapter-nav button:hover,
+.comic-reader-layout .chapter-nav button.active {
+  color: #ffffff;
+  background: #30303a;
+}
+
+.comic-chapter-content {
+  padding: 20px;
+  background: #0c0c0f;
+  border-radius: 18px;
+}
+
+.comic-chapter-content > h2 {
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.comic-page {
+  width: 100%;
+  margin: 0 auto 16px;
+}
+
+.comic-page img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 0;
+  background: #111111;
+  box-shadow: none;
+}
+
+.comic-page figcaption {
+  margin: 10px 0 18px;
+  color: #aaaab3;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Небольшое расстояние между страницами */
+
+.comic-page + .comic-page {
+  margin-top: 8px;
+}
+
+/* Планшет и телефон */
+
+@media (max-width: 900px) {
+  .comic-reader-layout {
+    grid-template-columns: 1fr;
+    width: min(100% - 18px, 920px);
+    gap: 20px;
+  }
+
+  .comic-reader-layout .chapter-nav {
+    position: static;
+  }
+
+  .comic-chapter-content {
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .comic-reader-layout {
+    width: 100%;
+  }
+
+  .comic-chapter-content {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .comic-page {
+    margin-bottom: 8px;
+  }
+}
+
