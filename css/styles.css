@@ -339,6 +339,19 @@ button { cursor: pointer; }
   }
 }
 
+/* Полная обложка в карточках каталога */
+
+.work-cover {
+  aspect-ratio: 2 / 3;
+  background: #171719;
+}
+
+.work-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
 
 
