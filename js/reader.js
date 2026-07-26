@@ -35,6 +35,31 @@ document.addEventListener("DOMContentLoaded", async () => {
       <section class="reader-hero"><div class="reader-hero-inner">
         <img class="reader-cover" src="${AuthorSite.escapeHtml(currentWork.cover_url || "images/cover-placeholder.svg")}" alt="Обложка: ${AuthorSite.escapeHtml(currentWork.title)}">
         <div><p class="eyebrow">${AuthorSite.escapeHtml(AuthorSite.typeLabel(currentWork.type))}${currentWork.genre ? ` · ${AuthorSite.escapeHtml(currentWork.genre)}` : ""}</p><h1>${AuthorSite.escapeHtml(currentWork.title)}</h1><p class="reader-description">${AuthorSite.escapeHtml(currentWork.description || "")}</p></div>
+        ${currentWork.store_url ? `
+  <div class="external-purchase">
+
+    <p class="external-purchase-text">
+      Купить полную версию книги
+      ${currentWork.store_name
+        ? `на площадке ${AuthorSite.escapeHtml(currentWork.store_name)}`
+        : "на книжной площадке"}
+    </p>
+
+    <a
+      class="button primary external-purchase-button"
+      href="${AuthorSite.escapeHtml(currentWork.store_url)}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Купить книгу
+    </a>
+
+    <small>
+      Вы перейдёте на внешний сайт, где сможете оформить покупку.
+    </small>
+
+  </div>
+` : ""}
       </div></section>
       <section class="reader-layout">
         <aside class="chapter-nav"><h2>Оглавление</h2>${chapters.map((chapter, index) => `<button class="${index === 0 ? "active" : ""}" data-chapter="${chapter.id}" type="button">${chapter.chapter_number}. ${AuthorSite.escapeHtml(chapter.title)}</button>`).join("") || '<p>Опубликованных глав пока нет.</p>'}</aside>
