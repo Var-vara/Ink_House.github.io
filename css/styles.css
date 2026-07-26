@@ -353,5 +353,42 @@ button { cursor: pointer; }
   object-position: center;
 }
 
+/* Покупка книги на внешней площадке */
 
+.external-purchase {
+  width: min(440px, 100%);
+  margin-top: 28px;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.external-purchase-text {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.external-purchase-button {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.external-purchase small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
 
