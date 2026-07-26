@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Каталог книг, рассказов и иллюстрированных историй.">
+  <title>Произведения — Чернильный дом</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="catalog">
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">Ч</span><span><strong data-site-name>Чернильный дом</strong><small>истории, образы, миры</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Меню</button>
+    <nav id="main-nav" class="main-nav"><a href="index.html">Главная</a><a class="active" href="catalog.html">Произведения</a><a href="gallery.html">Галерея</a><a href="about.html">Об авторе</a></nav>
+  </header>
+
+  <main class="container page-main">
+    <section class="page-intro">
+      <p class="eyebrow">Библиотека</p>
+      <h1>Произведения</h1>
+      <p>Найдите книгу, рассказ или историю с иллюстрациями.</p>
+    </section>
+
+    <section class="catalog-toolbar" aria-label="Фильтры каталога">
+      <label class="search-field"><span>Поиск</span><input id="search-input" type="search" placeholder="Название, жанр или описание"></label>
+      <div class="filter-buttons" id="type-filters">
+        <button class="filter-button active" data-type="all" type="button">Все</button>
+        <button class="filter-button" data-type="book" type="button">Книги</button>
+        <button class="filter-button" data-type="story" type="button">Рассказы</button>
+        <button class="filter-button" data-type="illustrated" type="button">С иллюстрациями</button>
+      </div>
+    </section>
+
+    <p id="catalog-count" class="catalog-count"></p>
+    <section id="catalog-grid" class="works-grid" aria-live="polite"><p class="loading">Загружаем каталог…</p></section>
+  </main>
+
+  <footer class="site-footer"><div><strong data-site-name>Чернильный дом</strong><p>Авторские тексты, фотографии и иллюстрации.</p></div><div class="footer-links"><a href="catalog.html">Читать</a><a href="gallery.html">Галерея</a><a href="admin.html">Вход автора</a></div><p>© <span data-current-year></span> <span data-author-name>Имя автора</span></p></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script><script src="js/demo-data.js"></script><script src="js/site.js"></script><script src="js/catalog.js"></script>
+</body>
+</html>

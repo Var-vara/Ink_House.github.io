@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Чтение авторского произведения.">
+  <title>Чтение — Чернильный дом</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="reader">
+  <header class="site-header compact-header">
+    <a class="brand" href="index.html"><span class="brand-mark">Ч</span><span><strong data-site-name>Чернильный дом</strong><small>истории, образы, миры</small></span></a>
+    <a class="button small ghost" href="catalog.html">← К каталогу</a>
+  </header>
+
+  <main id="reader-root" class="reader-shell" aria-live="polite"><p class="loading">Открываем произведение…</p></main>
+
+  <footer class="site-footer"><div><strong data-site-name>Чернильный дом</strong><p>Авторские тексты, фотографии и иллюстрации.</p></div><div class="footer-links"><a href="catalog.html">Читать</a><a href="gallery.html">Галерея</a></div><p>© <span data-current-year></span> <span data-author-name>Имя автора</span></p></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script><script src="js/demo-data.js"></script><script src="js/site.js"></script><script src="js/reader.js"></script>
+</body>
+</html>

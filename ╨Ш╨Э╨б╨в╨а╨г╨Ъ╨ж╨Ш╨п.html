@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пошаговая инструкция — авторский сайт</title>
+<style>
+:root{--bg:#f5f0e8;--paper:#fffdf8;--ink:#211b1a;--muted:#6e625d;--accent:#7c2d3c;--line:#d9cfc4;--ok:#236b48;--warn:#9a6320}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Arial,sans-serif}main{width:min(980px,calc(100% - 28px));margin:30px auto 100px}.hero,.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,5vw,48px);margin-bottom:22px}.hero{background:linear-gradient(135deg,#fffdf8,#eaded1)}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.18}h1{font-size:clamp(42px,7vw,75px);margin:0 0 18px}h2{font-size:34px;margin:0 0 18px}h3{font-size:24px;margin-top:32px}.eyebrow{color:var(--accent);font-size:12px;font-weight:bold;letter-spacing:.15em;text-transform:uppercase}.lead{font-size:21px;color:var(--muted)}code{background:#eee5dc;padding:3px 7px;border-radius:6px;font-family:Consolas,monospace}pre{overflow:auto;padding:18px;background:#211b1a;color:#f5eee5;border-radius:12px;white-space:pre-wrap}ol.steps{counter-reset:item;list-style:none;padding:0}.steps>li{position:relative;padding:0 0 26px 52px;border-left:2px solid #d9cfc4;margin-left:18px}.steps>li:last-child{border-left-color:transparent}.steps>li:before{counter-increment:item;content:counter(item);position:absolute;left:-19px;top:0;width:36px;height:36px;display:grid;place-items:center;background:var(--accent);color:white;border-radius:50%;font-weight:bold}.note,.warning,.success{padding:16px 18px;border-radius:12px;margin:18px 0}.note{background:#e9eef4}.warning{background:#fff1d8;border-left:5px solid var(--warn)}.success{background:#e2f2e8;border-left:5px solid var(--ok)}.toc a{display:block;padding:7px 0;color:var(--accent)}table{width:100%;border-collapse:collapse}td,th{padding:11px;border:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eee5dc}.checklist{list-style:'✓  ';padding-left:25px}.small{font-size:14px;color:var(--muted)}a{color:var(--accent)}kbd{border:1px solid #b9afa7;border-bottom-width:3px;border-radius:5px;padding:2px 6px;background:white}.top{position:fixed;right:15px;bottom:15px;background:var(--accent);color:white;text-decoration:none;padding:10px 14px;border-radius:999px}@media(max-width:600px){body{font-size:16px}.card,.hero{padding:22px}.steps>li{padding-left:42px}table{font-size:13px}}
+</style>
+</head>
+<body id="top">
+<main>
+<section class="hero">
+<p class="eyebrow">Инструкция для новичка</p>
+<h1>Авторский сайт без Visual Studio Code и Node.js</h1>
+<p class="lead">Все действия выполняются в браузере. Для первого просмотра достаточно дважды нажать на файл <code>index.html</code>. Для публикации понадобятся бесплатные аккаунты GitHub и Supabase.</p>
+<div class="success"><strong>Код уже написан.</strong> Вам не нужно печатать его вручную. Все файлы находятся рядом с этой инструкцией.</div>
+</section>
+
+<section class="card toc">
+<h2>Содержание</h2>
+<a href="#part1">1. Что находится в папке</a>
+<a href="#part2">2. Как открыть демонстрационный сайт</a>
+<a href="#part3">3. Как поменять название и имя автора</a>
+<a href="#part4">4. Как бесплатно опубликовать сайт через GitHub Pages</a>
+<a href="#part5">5. Как создать базу Supabase</a>
+<a href="#part6">6. Как подключить сайт к Supabase</a>
+<a href="#part7">7. Как создать аккаунт автора</a>
+<a href="#part8">8. Как пользоваться панелью автора</a>
+<a href="#part9">9. Как менять код прямо на GitHub</a>
+<a href="#part10">10. Частые ошибки</a>
+</section>
+
+<section class="card" id="part1">
+<p class="eyebrow">Часть 1</p><h2>Что находится в папке</h2>
+<table><tr><th>Файл или папка</th><th>Для чего нужен</th></tr>
+<tr><td><code>index.html</code></td><td>Главная страница.</td></tr>
+<tr><td><code>catalog.html</code></td><td>Каталог книг и рассказов.</td></tr>
+<tr><td><code>reader.html</code></td><td>Страница чтения произведения и глав.</td></tr>
+<tr><td><code>gallery.html</code></td><td>Галерея фотографий и иллюстраций.</td></tr>
+<tr><td><code>about.html</code></td><td>Страница с информацией об авторе.</td></tr>
+<tr><td><code>admin.html</code></td><td>Закрытая панель автора.</td></tr>
+<tr><td><code>css</code></td><td>Оформление, цвета, размеры и мобильная версия.</td></tr>
+<tr><td><code>js</code></td><td>Работа каталога, читалки и панели автора.</td></tr>
+<tr><td><code>images</code></td><td>Демонстрационные изображения.</td></tr>
+<tr><td><code>supabase/schema.sql</code></td><td>Создаёт таблицы, хранилище и защиту базы.</td></tr>
+<tr><td><code>supabase/make-admin.sql</code></td><td>Даёт вашему аккаунту права автора.</td></tr></table>
+<div class="warning"><strong>Не удаляйте папки <code>css</code>, <code>js</code> и <code>images</code>.</strong> Без них страницы потеряют оформление или перестанут работать.</div>
+</section>
+
+<section class="card" id="part2">
+<p class="eyebrow">Часть 2</p><h2>Как открыть демонстрационный сайт</h2>
+<ol class="steps">
+<li><strong>Распакуйте ZIP.</strong><br>Нажмите на архив правой кнопкой мыши → <b>Извлечь всё</b> → <b>Извлечь</b>.</li>
+<li><strong>Откройте распакованную папку.</strong><br>Найдите файл <code>index.html</code>.</li>
+<li><strong>Дважды нажмите на <code>index.html</code>.</strong><br>Он откроется в Chrome, Edge или другом браузере.</li>
+<li><strong>Проверьте страницы.</strong><br>Нажмите «Произведения», «Галерея», «Об авторе».</li>
+</ol>
+<div class="note">Пока Supabase не подключён, сайт показывает три демонстрационных произведения. Это нормально.</div>
+</section>
+
+<section class="card" id="part3">
+<p class="eyebrow">Часть 3</p><h2>Как поменять название сайта и имя автора</h2>
+<h3>Вариант до публикации: через Блокнот</h3>
+<ol class="steps">
+<li>Откройте папку <code>js</code>.</li>
+<li>Нажмите правой кнопкой по <code>config.js</code>.</li>
+<li>Выберите <b>Открыть с помощью → Блокнот</b>.</li>
+<li>Найдите строки:
+<pre>siteName: "Чернильный дом",
+authorName: "Имя автора",
+authorEmail: "author@example.com",</pre></li>
+<li>Замените только текст внутри кавычек. Кавычки и запятые оставьте.</li>
+<li>Нажмите <b>Файл → Сохранить</b>. Закройте Блокнот.</li>
+<li>Обновите сайт клавишей <kbd>F5</kbd>.</li>
+</ol>
+<div class="warning">Не используйте пункт «Сохранить как», если не уверены в настройках. Windows может создать файл <code>config.js.txt</code>, и сайт не увидит его.</div>
+<h3>Как изменить текст «Об авторе»</h3>
+<p>Откройте <code>about.html</code> через Блокнот. Найдите видимый русский текст о писателе и замените его. Не удаляйте фрагменты в угловых скобках, например <code>&lt;p&gt;</code> и <code>&lt;/p&gt;</code>.</p>
+<h3>Как заменить фотографию автора</h3>
+<ol>
+<li>Положите свою фотографию в папку <code>images</code>.</li>
+<li>Назовите её простым английским именем, например <code>author.jpg</code>.</li>
+<li>Откройте <code>about.html</code> через Блокнот.</li>
+<li>Замените <code>images/author-placeholder.svg</code> на <code>images/author.jpg</code>.</li>
+<li>Сохраните файл.</li>
+</ol>
+</section>
+
+<section class="card" id="part4">
+<p class="eyebrow">Часть 4</p><h2>Как бесплатно опубликовать сайт через GitHub Pages</h2>
+<p>После этого сайт получит адрес вида <code>https://ВАШ-ЛОГИН.github.io/</code>.</p>
+<h3>4.1. Создайте аккаунт GitHub</h3>
+<ol class="steps">
+<li>Откройте сайт <b>github.com</b>.</li>
+<li>Нажмите <b>Sign up</b>.</li>
+<li>Введите электронную почту, придумайте пароль и логин.</li>
+<li>Подтвердите электронную почту.</li>
+</ol>
+<h3>4.2. Создайте хранилище сайта</h3>
+<ol class="steps">
+<li>После входа нажмите значок <b>+</b> в правом верхнем углу.</li>
+<li>Нажмите <b>New repository</b>.</li>
+<li>В поле <b>Repository name</b> напишите:<pre>ВАШ-ЛОГИН.github.io</pre>Например, при логине <code>varvara-books</code> имя будет <code>varvara-books.github.io</code>.</li>
+<li>Выберите <b>Public</b>.</li>
+<li>Не ставьте галочку создания README, чтобы хранилище было пустым.</li>
+<li>Нажмите <b>Create repository</b>.</li>
+</ol>
+<h3>4.3. Загрузите файлы</h3>
+<ol class="steps">
+<li>На странице пустого репозитория нажмите ссылку <b>uploading an existing file</b>. Если её нет: <b>Add file → Upload files</b>.</li>
+<li>Откройте на компьютере распакованную папку сайта.</li>
+<li>Нажмите <kbd>Ctrl</kbd> + <kbd>A</kbd>, чтобы выделить всё содержимое папки.</li>
+<li>Перетащите выделенные файлы и папки в большое поле GitHub.</li>
+<li>Прокрутите страницу вниз.</li>
+<li>В поле сообщения можно написать <code>Первая версия сайта</code>.</li>
+<li>Нажмите <b>Commit changes</b>.</li>
+</ol>
+<div class="warning"><strong>Не загружайте только ZIP-архив.</strong> GitHub Pages не распакует его. В корне репозитория должен быть виден файл <code>index.html</code>.</div>
+<h3>4.4. Включите GitHub Pages</h3>
+<ol class="steps">
+<li>Откройте вкладку <b>Settings</b> вашего репозитория.</li>
+<li>В левом меню откройте <b>Pages</b>.</li>
+<li>В разделе <b>Build and deployment</b> выберите <b>Deploy from a branch</b>.</li>
+<li>В поле Branch выберите <b>main</b>, рядом выберите <b>/(root)</b>.</li>
+<li>Нажмите <b>Save</b>.</li>
+<li>Откройте вкладку <b>Actions</b>. Когда публикация отмечена зелёной галочкой, адрес сайта готов.</li>
+<li>Откройте <code>https://ВАШ-ЛОГИН.github.io/</code>.</li>
+</ol>
+</section>
+
+<section class="card" id="part5">
+<p class="eyebrow">Часть 5</p><h2>Как создать базу Supabase</h2>
+<h3>5.1. Создайте проект</h3>
+<ol class="steps">
+<li>Откройте <b>supabase.com</b>.</li>
+<li>Нажмите <b>Start your project</b> или <b>Sign in</b>.</li>
+<li>Удобнее войти через GitHub.</li>
+<li>Создайте организацию, если сервис попросит.</li>
+<li>Нажмите <b>New project</b>.</li>
+<li>Введите название, например <code>author-library</code>.</li>
+<li>Придумайте сложный пароль базы и сохраните его отдельно.</li>
+<li>Выберите ближайший регион.</li>
+<li>Нажмите кнопку создания проекта.</li>
+</ol>
+<h3>5.2. Создайте таблицы и защиту</h3>
+<ol class="steps">
+<li>В левом меню Supabase нажмите <b>SQL Editor</b>.</li>
+<li>Нажмите <b>New query</b>.</li>
+<li>На компьютере откройте файл <code>supabase/schema.sql</code> через Блокнот.</li>
+<li>Нажмите <kbd>Ctrl</kbd> + <kbd>A</kbd>, затем <kbd>Ctrl</kbd> + <kbd>C</kbd>.</li>
+<li>Вернитесь в поле SQL Editor и нажмите <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
+<li>Нажмите <b>Run</b>.</li>
+<li>Убедитесь, что нет красного сообщения об ошибке.</li>
+</ol>
+<div class="success">Этот SQL создаёт таблицы произведений, глав, галереи, публичное хранилище картинок и правила безопасности.</div>
+</section>
+
+<section class="card" id="part6">
+<p class="eyebrow">Часть 6</p><h2>Как подключить сайт к Supabase</h2>
+<h3>6.1. Скопируйте адрес и публичный ключ</h3>
+<ol class="steps">
+<li>В Supabase откройте кнопку <b>Connect</b> в верхней части проекта или <b>Settings → API Keys</b>.</li>
+<li>Скопируйте <b>Project URL</b>. Он выглядит примерно так: <code>https://abcdefgh.supabase.co</code>.</li>
+<li>Скопируйте <b>Publishable key</b>. Он начинается примерно с <code>sb_publishable_</code>.</li>
+</ol>
+<div class="warning"><strong>Никогда не вставляйте Secret key или старый service_role в сайт.</strong> В браузерный файл разрешено помещать только Publishable key. Безопасность обеспечивают правила RLS из <code>schema.sql</code>.</div>
+<h3>6.2. Измените config.js прямо на GitHub</h3>
+<ol class="steps">
+<li>Откройте свой репозиторий GitHub.</li>
+<li>Откройте папку <b>js</b>.</li>
+<li>Нажмите файл <b>config.js</b>.</li>
+<li>Нажмите значок карандаша <b>Edit this file</b>.</li>
+<li>Замените:
+<pre>supabaseUrl: "PASTE_YOUR_SUPABASE_URL_HERE",
+supabasePublishableKey: "PASTE_YOUR_PUBLISHABLE_KEY_HERE"</pre>
+на ваши данные, например:
+<pre>supabaseUrl: "https://abcdefgh.supabase.co",
+supabasePublishableKey: "sb_publishable_ВАШ_КЛЮЧ"</pre></li>
+<li>Нажмите <b>Commit changes</b>.</li>
+<li>В открывшемся окне снова нажмите <b>Commit changes</b>.</li>
+<li>После завершения новой публикации обновите сайт.</li>
+</ol>
+</section>
+
+<section class="card" id="part7">
+<p class="eyebrow">Часть 7</p><h2>Как создать аккаунт автора</h2>
+<h3>7.1. Укажите адрес сайта в Supabase</h3>
+<ol class="steps">
+<li>В Supabase откройте <b>Authentication</b>.</li>
+<li>Откройте <b>URL Configuration</b>. В некоторых версиях интерфейса этот пункт находится внутри <b>Authentication → Settings</b>.</li>
+<li>В поле <b>Site URL</b> укажите <code>https://ВАШ-ЛОГИН.github.io/</code>.</li>
+<li>В список <b>Redirect URLs</b> добавьте <code>https://ВАШ-ЛОГИН.github.io/admin.html</code>.</li>
+<li>Сохраните изменения.</li>
+</ol>
+<h3>7.2. Создайте пользователя</h3>
+<ol class="steps">
+<li>Откройте <b>Authentication → Users</b>.</li>
+<li>Нажмите <b>Add user</b>.</li>
+<li>Выберите <b>Send invitation</b>. Если интерфейс показывает вариант <b>Create new user</b>, можно выбрать его и сразу задать пароль.</li>
+<li>Введите свою электронную почту.</li>
+<li>Откройте письмо Supabase и завершите создание пароля.</li>
+</ol>
+<h3>7.3. Дайте аккаунту права автора</h3>
+<ol class="steps">
+<li>На компьютере откройте файл <code>supabase/make-admin.sql</code> через Блокнот.</li>
+<li>Дважды замените <code>YOUR_EMAIL@example.com</code> на почту созданного пользователя.</li>
+<li>Скопируйте весь код.</li>
+<li>В Supabase откройте <b>SQL Editor → New query</b>.</li>
+<li>Вставьте код и нажмите <b>Run</b>.</li>
+<li>В таблице результата должно появиться значение <code>true</code> в столбце <code>is_admin</code>.</li>
+</ol>
+<h3>7.4. Войдите</h3>
+<ol class="steps">
+<li>Откройте <code>https://ВАШ-ЛОГИН.github.io/admin.html</code>.</li>
+<li>Введите почту и пароль.</li>
+<li>Нажмите <b>Войти</b>.</li>
+</ol>
+</section>
+
+<section class="card" id="part8">
+<p class="eyebrow">Часть 8</p><h2>Как пользоваться панелью автора</h2>
+<h3>Добавление книги или рассказа</h3>
+<ol>
+<li>Откройте вкладку <b>Произведения</b>.</li>
+<li>Нажмите <b>+ Новое произведение</b>.</li>
+<li>Напишите название.</li>
+<li>Поле slug можно оставить пустым — адрес создастся автоматически.</li>
+<li>Выберите вид: книга, рассказ или иллюстрированный рассказ.</li>
+<li>Добавьте жанр, описание и обложку.</li>
+<li>Пока работа не готова, оставьте состояние <b>Черновик</b>.</li>
+<li>Нажмите <b>Сохранить</b>.</li>
+</ol>
+<h3>Добавление главы</h3>
+<ol>
+<li>Перейдите во вкладку <b>Главы</b>.</li>
+<li>В выпадающем списке выберите произведение.</li>
+<li>Нажмите <b>+ Новая глава</b>.</li>
+<li>Введите название и номер главы.</li>
+<li>Кнопка <b>+ Текст</b> добавляет большой текстовый блок.</li>
+<li><b>+ Заголовок</b> добавляет заголовок внутри главы.</li>
+<li><b>+ Цитата</b> добавляет выделенную цитату.</li>
+<li><b>+ Изображение</b> загружает иллюстрацию между текстовыми блоками.</li>
+<li>Стрелки ↑ и ↓ меняют порядок блоков, крестик удаляет блок.</li>
+<li>Поставьте флажок <b>Опубликовать главу</b> и сохраните.</li>
+</ol>
+<h3>Публикация произведения</h3>
+<p>Вернитесь в <b>Произведения</b>, нажмите нужную карточку, выберите состояние <b>Опубликовано</b> и сохраните. Читатели увидят только произведение со статусом «Опубликовано» и только главы с установленным флажком публикации.</p>
+<h3>Добавление фотографии или рисунка</h3>
+<ol>
+<li>Перейдите во вкладку <b>Галерея</b>.</li>
+<li>Нажмите <b>+ Новое изображение</b>.</li>
+<li>Введите название и описание.</li>
+<li>Выберите изображение.</li>
+<li>Поставьте флажок <b>Опубликовать</b>.</li>
+<li>Нажмите <b>Сохранить</b>.</li>
+</ol>
+</section>
+
+<section class="card" id="part9">
+<p class="eyebrow">Часть 9</p><h2>Как менять код прямо на GitHub</h2>
+<ol class="steps">
+<li>Откройте нужный файл в репозитории.</li>
+<li>Нажмите значок карандаша.</li>
+<li>Измените текст.</li>
+<li>Нажмите <b>Commit changes</b>.</li>
+<li>Подтвердите кнопкой <b>Commit changes</b>.</li>
+</ol>
+<p>Для замены изображения откройте папку <code>images</code> → <b>Add file → Upload files</b>. После загрузки используйте точное имя нового файла в HTML.</p>
+<div class="note">Материалы, добавленные через панель автора, хранятся в Supabase. Для них редактировать GitHub не требуется.</div>
+</section>
+
+<section class="card" id="part10">
+<p class="eyebrow">Часть 10</p><h2>Частые ошибки</h2>
+<h3>На сайте ошибка 404</h3><ul><li>Проверьте, что файл <code>index.html</code> находится в корне репозитория.</li><li>Проверьте <b>Settings → Pages</b>: branch <b>main</b>, folder <b>/(root)</b>.</li><li>Посмотрите вкладку <b>Actions</b>: публикация должна завершиться без красного крестика.</li></ul>
+<h3>Панель пишет «Сначала подключите Supabase»</h3><ul><li>Откройте <code>js/config.js</code> на GitHub.</li><li>Убедитесь, что оба значения <code>PASTE_...</code> заменены.</li><li>Проверьте кавычки и запятые.</li></ul>
+<h3>Ошибка входа</h3><ul><li>Проверьте почту и пароль.</li><li>Убедитесь, что подтвердили приглашение Supabase.</li><li>Повторно выполните <code>make-admin.sql</code> с правильной почтой.</li></ul>
+<h3>Ошибка загрузки изображения или RLS</h3><ul><li>Повторно выполните весь <code>schema.sql</code>.</li><li>Проверьте, что аккаунт имеет <code>is_admin = true</code>.</li><li>Загружайте JPG, PNG, WEBP или GIF размером до 10 МБ.</li></ul>
+<h3>Изменение не появилось</h3><ul><li>Откройте вкладку GitHub <b>Actions</b> и проверьте последнюю публикацию.</li><li>На сайте нажмите <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</li></ul>
+</section>
+
+<section class="card">
+<h2>Финальная проверка</h2>
+<ul class="checklist"><li>Сайт опубликован и открывается.</li><li>В Supabase выполнен <code>schema.sql</code>.</li><li>В <code>config.js</code> вставлены Project URL и Publishable key.</li><li>Создан пользователь автора.</li><li>Выполнен <code>make-admin.sql</code>.</li><li>Вход через <code>admin.html</code> работает.</li><li>Тестовое произведение отображается в каталоге.</li></ul>
+<p class="small">Интерфейс GitHub или Supabase иногда меняет названия кнопок. Ищите максимально близкие пункты: Repository/репозиторий, Settings/настройки, Pages/страницы, Authentication/аутентификация, Users/пользователи, SQL Editor.</p>
+</section>
+</main>
+<a class="top" href="#top">Наверх ↑</a>
+</body>
+</html>
