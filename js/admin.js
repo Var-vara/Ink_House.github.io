@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     byId("work-type").value = work.type;
     byId("work-genre").value = work.genre || "";
     byId("work-description").value = work.description || "";
+    byId("work-store-name").value = work.store_name || "";
+byId("work-store-url").value = work.store_url || "";
     byId("work-status").value = work.status;
     byId("work-featured").checked = Boolean(work.featured);
     byId("current-cover").innerHTML = work.cover_url ? `<img src="${escapeHtml(work.cover_url)}" alt="Текущая обложка">` : "";
@@ -150,6 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
         type: byId("work-type").value,
         genre: byId("work-genre").value.trim() || null,
         description: byId("work-description").value.trim() || null,
+        store_name:
+  byId("work-store-name").value.trim() || null,
+
+store_url:
+  byId("work-store-url").value.trim() || null,
         cover_url: coverUrl,
         status: byId("work-status").value,
         featured: byId("work-featured").checked,
