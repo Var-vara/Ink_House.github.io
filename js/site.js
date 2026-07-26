@@ -20,15 +20,14 @@
     }[character]));
   }
 
- function typeLabel(type) {
+function typeLabel(type) {
   return ({
     book: "Книга",
     story: "Рассказ",
     illustrated: "Иллюстрированная история",
     comic: "Комикс"
   })[type] || "Произведение";
-
-  }
+}
 
   function slugify(text = "") {
     return text.toLowerCase().trim()
