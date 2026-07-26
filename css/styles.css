@@ -1,18 +1,18 @@
 :root {
-  --bg: #f5f0e8;
-  --paper: #fffdf8;
-  --ink: #201a18;
-  --muted: #6e625d;
-  --line: #d9cfc4;
-  --accent: #7c2d3c;
-  --accent-dark: #531824;
-  --gold: #bb8b45;
-  --success: #236b48;
-  --danger: #a22d2d;
-  --shadow: 0 20px 60px rgba(40, 26, 19, .12);
+   --bg: #101015;
+  --paper: #1b1b23;
+  --ink: #f3eee8;
+  --muted: #aaa3ad;
+  --line: #383641;
+  --accent: #a83d59;
+  --accent-dark: #76283d;
+  --gold: #c99a52;
+  --success: #4f9b72;
+  --danger: #d45757;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   --radius: 22px;
-  --serif: Georgia, 'Times New Roman', serif;
-  --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -223,3 +223,81 @@ button { cursor: pointer; }
   .admin-card { padding: 18px; }
   .admin-tabs { grid-template-columns: 1fr 1fr; }
 }
+
+/* Мои изменения оформления */
+
+.site-header {
+  background: rgba(16, 16, 21, 0.94);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: #252530;
+}
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(168, 61, 89, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #101015, #24202a);
+}
+
+.muted-section {
+  background: #15151c;
+}
+
+.search-field input,
+.form-stack input,
+.form-stack textarea,
+.form-stack select,
+.wide-select select {
+  background: #15151c;
+  color: var(--ink);
+}
+
+.filter-button {
+  color: var(--ink);
+}
+
+.chapter-nav button:hover,
+.chapter-nav button.active {
+  background: #29242d;
+}
+
+.reader-hero {
+  background: linear-gradient(135deg, #211c25, #101015);
+}
+
+.site-footer,
+.admin-sidebar {
+  background: #09090d;
+}
+
+.admin-body {
+  background: #111117;
+}
+
+.admin-list-item,
+.block-toolbar button,
+.block-editor-card textarea,
+.block-editor-card input {
+  background: #15151c;
+  color: var(--ink);
+}
+
+.admin-list-item:hover,
+.admin-list-item.active {
+  background: #292028;
+}
+
+.block-editor-card {
+  background: #181820;
+}
+
+
+
+
