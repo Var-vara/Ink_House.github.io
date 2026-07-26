@@ -8,6 +8,6 @@ window.SITE_CONFIG = {
   authorEmail: "varya.ankudinova98@mail.ru",
 
   // Вставьте данные из Supabase. Пока оставлены слова PASTE_..., сайт показывает демо.
-  supabaseUrl: "PASTE_YOUR_SUPABASE_URL_HERE",
-  supabasePublishableKey: "PASTE_YOUR_PUBLISHABLE_KEY_HERE"
+  supabaseUrl: "https://pxfkrtnpwgfgygexulcb.supabase.co",
+  supabasePublishableKey: "sb_publishable_w2bUT96JSHFiNIKIP6cSiw_Ic_X1RpD"
 };
