@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const safeText = AuthorSite.escapeHtml(block.text || "");
     if (block.type === "heading") return `<h3 class="reading-block reading-heading">${safeText}</h3>`;
     if (block.type === "quote") return `<blockquote class="reading-block reading-quote">${safeText}</blockquote>`;
-   if (block.type === "image") {
+  if (block.type === "image") {
   const comicClass =
     currentWork?.type === "comic"
       ? " comic-page"
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     document.title = `${currentWork.title} — ${AuthorSite.config.siteName || "Чернильный дом"}`;
     const chapters = currentWork.chapters || [];
-    const isComic = currentWork.type === "comic";
+  const isComic = currentWork.type === "comic";
     root.innerHTML = `
       <section class="reader-hero"><div class="reader-hero-inner">
         <img class="reader-cover" src="${AuthorSite.escapeHtml(currentWork.cover_url || "images/cover-placeholder.svg")}" alt="Обложка: ${AuthorSite.escapeHtml(currentWork.title)}">
@@ -89,9 +89,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   </div>
 ` : ""}
       </div></section>
-     <section class="reader-layout ${isComic ? "comic-reader-layout" : ""}">
+    <section class="reader-layout ${isComic ? "comic-reader-layout" : ""}">
         <aside class="chapter-nav"><h2>Оглавление</h2>${chapters.map((chapter, index) => `<button class="${index === 0 ? "active" : ""}" data-chapter="${chapter.id}" type="button">${chapter.chapter_number}. ${AuthorSite.escapeHtml(chapter.title)}</button>`).join("") || '<p>Опубликованных глав пока нет.</p>'}</aside>
-       <article
+      <article
   id="chapter-content"
   class="chapter-content ${isComic ? "comic-chapter-content" : ""}"
 ></article>
