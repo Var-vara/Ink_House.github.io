@@ -623,7 +623,10 @@ button { cursor: pointer; }
 }
 
 /* Размер логотипа */
-
+site-brand {
+  margin-right: 100px;
+  flex-shrink: 0;
+}
 .site-brand-logo,
 .site-brand-logo-full {
   width: 120px;
