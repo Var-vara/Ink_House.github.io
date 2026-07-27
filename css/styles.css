@@ -564,14 +564,14 @@ button { cursor: pointer; }
 /* Увеличенный логотип и сдвиг влево */
 
 .site-brand {
-  margin-left: -100px;
+  margin-left: -180px;
   flex-shrink: 0;
 }
 
 .site-brand-logo,
 .site-brand-logo-full {
-  width: 190px;
-  height: 150px;
+  width: 210px;
+  height: 170px;
   display: block;
   object-fit: contain;
 }
