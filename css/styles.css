@@ -499,4 +499,66 @@ button { cursor: pointer; }
     margin-bottom: 8px;
   }
 }
+/* Логотип в левом верхнем углу */
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-brand-logo {
+  width: 72px;
+  height: 72px;
+  display: block;
+  object-fit: contain;
+}
+
+.site-brand-name {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.site-brand:hover {
+  opacity: 0.82;
+}
+
+/* Выравнивание шапки */
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Телефон */
+
+@media (max-width: 700px) {
+  .site-brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .site-brand-name {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 440px) {
+  .site-brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .site-brand-name {
+    display: none;
+  }
+}
 
