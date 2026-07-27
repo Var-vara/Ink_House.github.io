@@ -604,3 +604,88 @@ button { cursor: pointer; }
   }
 }
 
+/* ==========================================
+   КОМПАКТНОЕ ВЕРХНЕЕ МЕНЮ
+   ========================================== */
+
+.site-header {
+  padding: 0;
+}
+
+.header-inner {
+  min-height: 86px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Размер логотипа */
+
+.site-brand-logo,
+.site-brand-logo-full {
+  width: 120px;
+  height: 82px;
+  object-fit: contain;
+  transform: none;
+}
+
+/* Расстояние между кнопками меню */
+
+.site-navigation,
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Размер надписей в меню */
+
+.site-navigation a,
+.site-nav a {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Планшеты */
+
+@media (max-width: 900px) {
+  .header-inner {
+    min-height: 76px;
+  }
+
+  .site-brand-logo,
+  .site-brand-logo-full {
+    width: 105px;
+    height: 70px;
+  }
+
+  .site-navigation,
+  .site-nav {
+    gap: 12px;
+  }
+
+  .site-navigation a,
+  .site-nav a {
+    font-size: 13px;
+  }
+}
+
+/* Телефоны */
+
+@media (max-width: 600px) {
+  .header-inner {
+    min-height: 66px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .site-brand-logo,
+  .site-brand-logo-full {
+    width: 85px;
+    height: 58px;
+  }
+}
