@@ -561,4 +561,46 @@ button { cursor: pointer; }
     display: none;
   }
 }
+/* Увеличенный логотип и сдвиг влево */
+
+.site-brand {
+  margin-left: -100px;
+  flex-shrink: 0;
+}
+
+.site-brand-logo,
+.site-brand-logo-full {
+  width: 190px;
+  height: 150px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Планшет */
+
+@media (max-width: 1100px) {
+  .site-brand {
+    margin-left: 0;
+  }
+
+  .site-brand-logo,
+  .site-brand-logo-full {
+    width: 125px;
+    height: 100px;
+  }
+}
+
+/* Телефон */
+
+@media (max-width: 600px) {
+  .site-brand {
+    margin-left: 0;
+  }
+
+  .site-brand-logo,
+  .site-brand-logo-full {
+    width: 95px;
+    height: 75px;
+  }
+}
 
