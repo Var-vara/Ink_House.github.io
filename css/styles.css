@@ -564,7 +564,7 @@ button { cursor: pointer; }
 /* Увеличенный логотип и сдвиг влево */
 
 .site-brand {
-  margin-left: -230px;
+  margin-left: -300px;
   flex-shrink: 0;
 }
 
