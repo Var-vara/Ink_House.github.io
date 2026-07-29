@@ -1552,3 +1552,28 @@ footer {
     max-width: none;
   }
 }
+/* Более широкий блок «Новости» на главной странице */
+
+@media (min-width: 901px) {
+  .hero-inner,
+  .hero-grid {
+    grid-template-columns:
+   minmax(280px, 0.75fr)
+minmax(600px, 1.25fr);
+
+    gap: 32px;
+  }
+
+  .news-area,
+  .home-news-card {
+    width: 100%;
+    max-width: none;
+     @media (min-width: 1200px) {
+  .hero .container,
+  .hero-section .container {
+    width: min(1380px, calc(100% - 48px));
+    max-width: 1380px;
+  }
+}
+  }
+}
