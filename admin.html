@@ -127,6 +127,64 @@
         </section>
       </div>
     </section>
+    <section class="news-admin-card">
+
+  <div class="news-admin-heading">
+    <div>
+      <p class="eyebrow">Главная страница</p>
+      <h2>Новости</h2>
+    </div>
+
+    <span>Редактор</span>
+  </div>
+
+  <label class="news-admin-field">
+    <span>Выбери книгу или комикс</span>
+
+    <select id="news-work-select">
+      <option value="">
+        Загрузка произведений…
+      </option>
+    </select>
+  </label>
+
+  <label class="news-admin-field">
+    <span>Текст справа от обложки</span>
+
+    <textarea
+      id="news-text-input"
+      rows="7"
+      maxlength="1500"
+      placeholder="Например: Скоро выходит новая книга. Главного героя ждёт встреча с тайной медальона…"
+    ></textarea>
+  </label>
+
+  <label class="news-admin-checkbox">
+    <input
+      id="news-visible-input"
+      type="checkbox"
+    >
+
+    <span>
+      Показывать это произведение в новостях
+    </span>
+  </label>
+
+  <button
+    class="button primary"
+    id="news-save-button"
+    type="button"
+  >
+    Сохранить новость
+  </button>
+
+  <p
+    class="news-admin-message"
+    id="news-admin-message"
+    aria-live="polite"
+  ></p>
+
+</section>
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/demo-data.js"></script><script src="js/site.js"></script><script src="js/admin.js"></script>
