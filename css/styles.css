@@ -1556,9 +1556,9 @@ footer {
   .hero-grid {
     display: grid !important;
 
-    grid-template-columns:
-      minmax(260px, 0.7fr)
-      minmax(620px, 1.3fr) !important;
+  grid-template-columns:
+  minmax(240px, 0.6fr)
+  minmax(700px, 1.4fr) !important;
 
     gap: 24px !important;
     align-items: center !important;
@@ -1579,5 +1579,12 @@ footer {
     width: 100% !important;
     max-width: none !important;
     box-sizing: border-box !important;
+  }
+}
+@media (min-width: 901px) {
+  .hero-art.news-area {
+    width: calc(100% + 70px) !important;
+    max-width: none !important;
+    margin-right: -70px !important;
   }
 }
