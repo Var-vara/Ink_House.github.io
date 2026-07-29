@@ -967,3 +967,571 @@ site-brand {
   margin: 15px 0 0;
   color: var(--muted);
 }
+/* ==================================================
+   НОВЫЙ СТИЛЬ САЙТА «ЧЕРНИЛЬНЫЙ ДОМ»
+   ================================================== */
+
+:root {
+  --bg: #0d0a0b;
+  --bg-soft: #151012;
+  --surface: #1b1417;
+  --surface-light: #261b1f;
+
+  --paper: #20171a;
+  --ink: #f5eee4;
+  --muted: #b9aaad;
+
+  --accent: #8f1d2c;
+  --accent-hover: #ad293b;
+  --gold: #c8a96b;
+
+  --line: rgba(200, 169, 107, 0.22);
+
+  --shadow:
+    0 22px 60px rgba(0, 0, 0, 0.42);
+
+  --serif:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  --sans:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* Основная страница */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(143, 29, 44, 0.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 35%,
+      rgba(200, 169, 107, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      160deg,
+      #090708 0%,
+      #120d0f 50%,
+      #0b0809 100%
+    );
+  font-family: var(--sans);
+  line-height: 1.65;
+}
+
+/* Красивое выделение текста */
+
+::selection {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+/* Верхнее меню */
+
+.site-header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(13, 10, 11, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+}
+
+.header-inner {
+  min-height: 70px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Ссылки верхнего меню */
+
+.site-navigation,
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-navigation a,
+.site-nav a {
+  position: relative;
+  padding: 9px 2px;
+  color: rgba(245, 238, 228, 0.78);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-navigation a::after,
+.site-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.site-navigation a:hover,
+.site-nav a:hover,
+.site-navigation a.active,
+.site-nav a.active {
+  color: #ffffff;
+}
+
+.site-navigation a:hover::after,
+.site-nav a:hover::after,
+.site-navigation a.active::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* Заголовки */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+h1 {
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Небольшие подписи над заголовками */
+
+.eyebrow,
+.kicker,
+.section-kicker {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Главный блок сайта */
+
+.hero,
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(
+      120deg,
+      rgba(143, 29, 44, 0.15),
+      transparent 48%
+    );
+}
+
+.hero h1,
+.hero-section h1 {
+  color: #fff8ee;
+  text-shadow:
+    0 3px 30px rgba(143, 29, 44, 0.28);
+}
+
+.hero p,
+.hero-section p {
+  color: var(--muted);
+}
+
+/* Обычные ссылки */
+
+a {
+  color: var(--gold);
+}
+
+a:hover {
+  color: #e2c98e;
+}
+
+/* Основные кнопки */
+
+.button,
+button,
+input[type="submit"] {
+  border-radius: 10px;
+  font-family: var(--sans);
+}
+
+.button.primary,
+button.primary,
+.buy-book-button,
+.external-purchase-button,
+.home-news-button {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #761624,
+      #a52639
+    );
+  box-shadow:
+    0 12px 30px rgba(143, 29, 44, 0.32);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.button.primary:hover,
+button.primary:hover,
+.buy-book-button:hover,
+.external-purchase-button:hover,
+.home-news-button:hover {
+  color: #ffffff;
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow:
+    0 17px 40px rgba(143, 29, 44, 0.42);
+}
+
+/* Второстепенные кнопки */
+
+.button.secondary,
+.button.ghost {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.button.secondary:hover,
+.button.ghost:hover {
+  border-color: var(--gold);
+  background: rgba(200, 169, 107, 0.09);
+}
+
+/* Карточки книг, рассказов и комиксов */
+
+.work-card,
+.book-card,
+.story-card,
+.gallery-card,
+.feature-card,
+.news-admin-card,
+.external-purchase,
+.book-purchase {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(38, 27, 31, 0.96),
+      rgba(24, 17, 20, 0.98)
+    );
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.work-card:hover,
+.book-card:hover,
+.story-card:hover,
+.gallery-card:hover,
+.feature-card:hover {
+  border-color: rgba(200, 169, 107, 0.6);
+  transform: translateY(-7px);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Текст внутри карточек */
+
+.work-card p,
+.book-card p,
+.story-card p,
+.gallery-card p,
+.feature-card p {
+  color: var(--muted);
+}
+
+.work-card h2,
+.work-card h3,
+.book-card h2,
+.book-card h3,
+.story-card h2,
+.story-card h3 {
+  color: #fff8ee;
+}
+
+/* Обложки */
+
+.work-cover,
+.book-cover,
+.reader-cover,
+.home-news-cover {
+  overflow: hidden;
+  border: 1px solid rgba(200, 169, 107, 0.24);
+  background:
+    linear-gradient(
+      145deg,
+      #0a0809,
+      #1a1215
+    );
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.44);
+}
+
+.work-cover img,
+.book-cover img,
+.reader-cover,
+.home-news-cover img {
+  object-fit: contain;
+}
+
+/* Блок новостей */
+
+.home-news-card {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(143, 29, 44, 0.18),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #21171a,
+      #140f11
+    );
+  box-shadow: var(--shadow);
+}
+
+.home-news-heading {
+  border-bottom-color: var(--line);
+}
+
+.home-news-heading h2,
+.home-news-title {
+  color: #fff8ee;
+}
+
+.home-news-heading span {
+  color: #1a1114;
+  background: var(--gold);
+}
+
+.home-news-text,
+.home-news-loading,
+.home-news-empty {
+  color: var(--muted);
+}
+
+.home-news-type {
+  color: var(--gold);
+}
+
+/* Страница чтения */
+
+.reader-hero,
+.reader-layout,
+.chapter-content,
+.reading-content {
+  color: var(--ink);
+}
+
+.chapter-content,
+.reading-content {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    rgba(26, 18, 21, 0.84);
+  box-shadow: var(--shadow);
+}
+
+.chapter-content p,
+.reading-content p {
+  color: rgba(245, 238, 228, 0.88);
+}
+
+/* Боковое меню глав */
+
+.chapter-nav {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+}
+
+.chapter-nav button {
+  color: var(--muted);
+  background: transparent;
+}
+
+.chapter-nav button:hover,
+.chapter-nav button.active {
+  color: #ffffff;
+  background: rgba(143, 29, 44, 0.34);
+}
+
+/* Фильтры каталога */
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  border-color: var(--gold);
+  color: #171013;
+  background: var(--gold);
+}
+
+/* Поля ввода и формы */
+
+input,
+textarea,
+select {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  background: #120d0f;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #766c6e;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(200, 169, 107, 0.12);
+}
+
+/* Панель администратора */
+
+.admin-card,
+.admin-panel,
+.admin-section,
+.news-admin-card {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background:
+    linear-gradient(
+      145deg,
+      #21171a,
+      #151012
+    );
+}
+
+.admin-card label,
+.admin-panel label,
+.admin-section label,
+.news-admin-card label {
+  color: var(--ink);
+}
+
+/* Разделители */
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Нижняя часть сайта */
+
+.site-footer,
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: #090708;
+}
+
+/* Полоса прокрутки */
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c090a;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid #0c090a;
+  border-radius: 999px;
+  background: #5d343b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Телефон */
+
+@media (max-width: 700px) {
+  .site-navigation,
+  .site-nav {
+    gap: 12px;
+  }
+
+  .site-navigation a,
+  .site-nav a {
+    font-size: 12px;
+  }
+
+  .home-news-card,
+  .work-card,
+  .book-card,
+  .story-card {
+    border-radius: 14px;
+  }
+}
