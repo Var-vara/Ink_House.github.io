@@ -1535,45 +1535,49 @@ footer {
     border-radius: 14px;
   }
 }
-/* Более широкий блок «Новости» на главной странице */
+/* ==========================================
+   ПРИНУДИТЕЛЬНО РАСШИРЯЕМ БЛОК «НОВОСТИ»
+   ========================================== */
 
 @media (min-width: 901px) {
-  .hero-inner {
-    grid-template-columns:
-      minmax(300px, 0.85fr)
-      minmax(560px, 1.15fr);
 
-    gap: 32px;
-  }
+  /* Расширяем всю верхнюю область */
 
-  .news-area,
-  .home-news-card {
-    width: 100%;
-    max-width: none;
-  }
-}
-/* Более широкий блок «Новости» на главной странице */
-
-@media (min-width: 901px) {
-  .hero-inner,
-  .hero-grid {
-    grid-template-columns:
-   minmax(280px, 0.75fr)
-minmax(600px, 1.25fr);
-
-    gap: 32px;
-  }
-
-  .news-area,
-  .home-news-card {
-    width: 100%;
-    max-width: none;
-     @media (min-width: 1200px) {
   .hero .container,
   .hero-section .container {
-    width: min(1380px, calc(100% - 48px));
-    max-width: 1380px;
+    width: calc(100% - 40px) !important;
+    max-width: 1450px !important;
   }
-}
+
+  /* Левая часть становится уже,
+     правая часть с новостями — шире */
+
+  .hero-inner,
+  .hero-grid {
+    display: grid !important;
+
+    grid-template-columns:
+      minmax(260px, 0.7fr)
+      minmax(620px, 1.3fr) !important;
+
+    gap: 24px !important;
+    align-items: center !important;
+  }
+
+  /* Сам блок новостей */
+
+  .hero-art.news-area,
+  .news-area {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    transform: none !important;
+  }
+
+  .home-news-card {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
   }
 }
