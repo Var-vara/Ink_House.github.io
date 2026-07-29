@@ -1535,3 +1535,20 @@ footer {
     border-radius: 14px;
   }
 }
+/* Более широкий блок «Новости» на главной странице */
+
+@media (min-width: 901px) {
+  .hero-inner {
+    grid-template-columns:
+      minmax(300px, 0.85fr)
+      minmax(560px, 1.15fr);
+
+    gap: 32px;
+  }
+
+  .news-area,
+  .home-news-card {
+    width: 100%;
+    max-width: none;
+  }
+}
