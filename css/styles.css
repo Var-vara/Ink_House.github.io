@@ -1583,7 +1583,7 @@ footer {
 }
 @media (min-width: 901px) {
   .hero-art.news-area {
-    width: calc(100% + 150px) !important;
+    width: calc(100% + 230px) !important;
     max-width: none !important;
     margin-right: -70px !important;
   }
