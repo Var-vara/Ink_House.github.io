@@ -1588,3 +1588,61 @@ footer {
     margin-right: -70px !important;
   }
 }
+/* Логотип в левом верхнем углу */
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: -20px;
+  text-decoration: none;
+}
+
+.site-logo img {
+  display: block;
+  width: 190px;
+  max-width: 32vw;
+  height: auto;
+  max-height: 86px;
+  object-fit: contain;
+}
+
+.header-inner {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Планшеты */
+
+@media (max-width: 900px) {
+  .site-logo {
+    margin-left: 0;
+  }
+
+  .site-logo img {
+    width: 155px;
+    max-height: 74px;
+  }
+
+  .header-inner {
+    min-height: 80px;
+  }
+}
+
+/* Телефоны */
+
+@media (max-width: 600px) {
+  .site-logo img {
+    width: 120px;
+    max-width: 40vw;
+    max-height: 62px;
+  }
+
+  .header-inner {
+    min-height: 70px;
+    gap: 12px;
+  }
+}
